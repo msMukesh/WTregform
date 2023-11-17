@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reg.css">
+    <script src="reg.js"></script>
+
+    <title>Student Registration</title>
+</head>
+<body>
+<div class="title"><h2><center>Registration Form</center></h2></div>
+    <div class="main">
+        <form method="post" action="reg.php" class="container" enctype="multipart/form-data">
+        <div class="input">
+            <label for="name">Name:</label><br>
+            <input type="text" name="name" oninput="convertToUppercase(this)" required>
+        </div>
+        <div>
+            <label for="fname">Father's Name:</label>
+            <br>
+            <input type="text" name="fname" oninput="convertToUppercase(this)" required>
+        </div>
+
+        <div>
+            <label for="mname">Mother's Name:</label>
+            <br>
+            <input type="text" name="mname" oninput="convertToUppercase(this)" required>
+        </div>
+
+        <div>
+            <label for="address">Address:</label>
+            <br>
+            <input type="text" name="address" required>
+        </div>
+
+        <div>
+            <label for="phonenum">Phone Number:</label>
+            <br>
+            <input id="phonenum" onclick="phoneRemoveText()" type="tel" name="phonenum" pattern="[1-9]{1}[0-9]{9}" oninput="convertToUppercase()" required>
+            <div id="phone-helper-text"></div>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <br>
+            <input id="emailid" onclick="emailRemoveText()" type="email" name="email" required>
+            <div id="email-helper-text"></div>
+        </div>
+
+        <div>
+            <label for="dob">Date of Birth:</label>
+            <br>
+            <input type="date" name="dob" required>
+        </div>
+
+        <div>
+            <label for="gender">Gender:</label>
+            <br>
+            <select id="gender" name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="course">Select a course:</label>
+            <br>
+            <select id="course" name="course">
+                <option value="Msc">Msc</option>
+                <option value="Mca">Mca</option>
+                <option value="Mtech">Mtech</option>
+                <option value="phd">PhD</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="image">Upload Image:</label>
+            <br>
+            <input type="file" name="image" accept="image/*">
+        </div>
+
+        <div>
+            <label for="resume">Upload Resume:</label>
+            <br>
+            <input type="file" name="resume" accept=".pdf">
+        </div>
+        <div>
+            <input type="submit" value="Submit" onclick=" submitForm()">
+        </div>
+    </form>
+</div>
+<script>
+    function convertToUppercase(inputField) {
+        console.log(inputField);
+        inputField.value = inputField.value.toUpperCase(); // Use inputField instead of input
+    }
+    </script>
+    
+</body>
+</html>

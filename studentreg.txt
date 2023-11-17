@@ -1,0 +1,13 @@
+name 
+regno
+email id
+department
+course
+address
+upload photo
+upload resume
+
+db 
+js
+store in upper case
+in email domain name verification
